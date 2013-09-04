@@ -3,3 +3,19 @@
   %input(type="text" ng-model="yourName" placeholder="Enter a name here")
   %hr
   %h1 Hello {{yourName}}!
+
+  %div(ng-controller='PeopleCtrl')
+    %h1 Message: {{message}}
+
+  %div(ng-controller='PeopleCtrl')
+    #people-list-container
+      %ul
+        %li(ng-repeat='person in people' ng-click='showPerson(person)')
+          %h3
+            {{person.first_name}} {{person.last_name}}
+            %small {{person.birthday}}
+            = link_to "show", '#', 'ng-click' => 'showPerson(person)'
+    #people-view-container(ng-show='selectedPerson')
+      %h2
+        {{selectedPerson.first_name}} {{selectedPerson.last_name}}
+      %p {{selectedPerson.birthday | date: 'mediumDate'}}
