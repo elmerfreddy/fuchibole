@@ -9,8 +9,6 @@
     .collapse.navbar-collapse
       %ul.nav.navbar-nav
         %li.active
-          %a{:href => "#"} Home
-        %li
-          %a{:href => "#about"} About
-        %li
-          %a{:href => "#contact"} Contact
+          = link_to 'Ligas', '#ligas'
+        %li= link_to 'Equipos', '#equipos'
+        %li= link_to 'Jugadores', '#jugadores'
